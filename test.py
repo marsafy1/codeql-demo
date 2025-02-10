@@ -161,4 +161,7 @@ def read_safe_file(filename: str):
 """
 
 
-eval("input()")
+def read_user(user_id: str):
+    query = f"SELECT * FROM users WHERE id = '{user_id}';"  # Input from endpoint. Shoud be (+)
+    with engine.connect() as connection:
+        result = connection.execute(query)
