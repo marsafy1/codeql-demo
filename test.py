@@ -162,6 +162,6 @@ def read_safe_file(filename: str):
 
 
 def read_user(user_id: str):
-    query = f"SELECT * FROM users WHERE id = '{user_id}';"  # Input from endpoint. Shoud be (+)
+    query = f"SELECT * FROM users WHERE name = '{user_id}';"  # Input from endpoint. Shoud be (+)
     with engine.connect() as connection:
-        result = connection.execute(query)
+        result_sql = connection.execute(query)
